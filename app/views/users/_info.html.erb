@@ -10,11 +10,11 @@
   </tr>
   <tr>
 	  <th>follows</th>
-	  <th><%= link_to user.followings.count, user_relationships_path(user.id), method: :delete %></th>
+	  <th><%= link_to user.followings.count, followings_path(user) %></th>
   </tr>
   <tr>
 	  <th>followers</th>
-	  <th><%= link_to user.followers.count, user_relationships_path(user.id), method: :delete %></th>
+	  <th><%= link_to user.followers.count, followers_path(user.id) %></th>
   </tr>
 </table>
 
