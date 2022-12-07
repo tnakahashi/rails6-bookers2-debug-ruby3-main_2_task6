@@ -31,12 +31,18 @@
             <%= render 'favorites/favorite-btn', book: @book %>
           </td>
 
-            <td>コメント数：<%= @book.book_comments.count %></td>
+
+          <td class="book-comments-counter">
+            <%= render "book_comments/counter", book: @book %>
+          </td>
         </tr>
       </table>
-      <td class= <%= "book-comments-comment-" + @book.id.to_s %>>
-        <%= render 'book_comments/comment', book: @book, book_comment: @book_comment %>
-      </td>
+
+      <div class="book-comments-index">
+        <%= render "book_comments/index", book: @book, book_comment: @comment %>
+      </div>
+
+      <%= render "book_comments/form", book: @book, book_comment: @book_comment %>
     </div>
   </div>
 </div>
