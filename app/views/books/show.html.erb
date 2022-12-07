@@ -27,15 +27,16 @@
             <td><%= link_to 'Destroy', @book, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
           <% end %>
 
-          <td class="favorite-btn">
+          <td class= <%= "favorite-" + @book.id.to_s %>>
             <%= render 'favorites/favorite-btn', book: @book %>
-          <td>
+          </td>
 
-          <td>コメント数：<%= @book.book_comments.count %></td>
+            <td>コメント数：<%= @book.book_comments.count %></td>
         </tr>
       </table>
-
-      <%= render 'comment', book: @book, new_book_comment: @book_comment %>
+      <td class= <%= "book-comments-comment-" + @book.id.to_s %>>
+        <%= render 'book_comments/comment', book: @book, book_comment: @book_comment %>
+      </td>
     </div>
   </div>
 </div>
